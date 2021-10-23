@@ -1,2 +1,2 @@
-# Laurea_Testing_Project
-Laurea Fundamentals of Software Testing TO00BL79-3004
+# Jani_Eriksson_Testing_Project
+Laurea / Fundamentals of Software Testing TO00BL79-3004
