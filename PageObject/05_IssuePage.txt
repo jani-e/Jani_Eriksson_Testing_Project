@@ -1,0 +1,33 @@
+
+#******************** Settings ************************
+
+*** Settings ***
+Documentation	Issue Test scenario. CRUD Operation: Create, Read, Update, Delete
+
+# TODO: Write Precondition and Postcondition 
+
+Pre Condition	Tips: Project must be created by the user before 
+Post Condition	
+
+
+#******************* Common Variables ********************
+
+
+*** Variables ***
+
+# NOTE: Please Remove your login credential before uploading Assignments
+
+# TODO: Write Issue creation field variables, Updated name of the issue
+
+
+
+#******************** Test Cases *************************
+
+*** Test Case ***
+
+# Positive Test
+# TODO: 
+	Create issue,
+ 	Update name of issue, 
+	Create second issue with privious updated name
+    Delete first issue
