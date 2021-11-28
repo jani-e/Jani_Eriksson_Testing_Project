@@ -18,7 +18,7 @@ Last modified: 10.08.2021
 # Assignment Deliverables
 
 - [ ] Create Test cases for all pages which are already there in PageObject folder
-  - [ ] 03_RegisterPage
+  - [x] 03_RegisterPage
   - [ ] 04_ProjectPage
   - [ ] 05_IssuePage
 - [ ] Perform all TODO: tasks describe in each above pages
