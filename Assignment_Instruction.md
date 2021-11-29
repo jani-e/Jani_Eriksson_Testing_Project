@@ -17,11 +17,11 @@ Last modified: 10.08.2021
 - 
 # Assignment Deliverables
 
-- [ ] Create Test cases for all pages which are already there in PageObject folder
+- [x] Create Test cases for all pages which are already there in PageObject folder
   - [x] 03_RegisterPage
   - [x] 04_ProjectPage
-  - [ ] 05_IssuePage
-- [ ] Perform all TODO: tasks describe in each above pages
+  - [x] 05_IssuePage
+- [x] Perform all TODO: tasks describe in each above pages
 - [ ] Create bug report for one test case which are already there in BugReport folder
   - [ ] 02_ProjectPageReport
 - [ ] Write Learning Reflection page and upload in LearningReflection folder with name "Firstname_Lastname_LearningReflection"

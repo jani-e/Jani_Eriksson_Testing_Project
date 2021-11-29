@@ -6,8 +6,9 @@ Documentation	Issue Test scenario. CRUD Operation: Create, Read, Update, Delete
 
 # TODO: Write Precondition and Postcondition 
 
-Pre Condition	Tips: Project must be created by the user before 
-Post Condition	
+Pre Condition	Open Browser, Login GitLab, Open existing project  Tips: Project must be created by the user before 
+Post Condition	Logout GitLab, Close Browser
+Tags	Issue, TS-1-Issue
 
 
 #******************* Common Variables ********************
@@ -19,7 +20,9 @@ Post Condition
 
 # TODO: Write Issue creation field variables, Updated name of the issue
 
-
+PROJECT_URL= https://gitlab.com/VefiVek/testing
+Issue_Name= TestIssue1
+Issue_Name_Updated= UpdatedIssue
 
 #******************** Test Cases *************************
 
@@ -31,3 +34,41 @@ Post Condition
  	Update name of issue, 
 	Create second issue with privious updated name
     Delete first issue
+
+Create a new issue in project
+	Navigate To Project Page	PROJECT_URL
+	Select Issues
+	Select New Issue
+	Input Title					Issue_Name
+	Submit Issue Form
+	Select Issues
+	Verify that new Issue was created.
+
+Update existing issue name in project
+	Navigate To Project Page	PROJECT_URL
+	Select Issues
+	Select Issue				Issue_Name
+	Select Edit Title and Description
+	Edit Title					Issue_Name_Updated
+	Submit Save changes
+	Select Issues
+	Verify that Issue name was updated.
+
+Create a second issue with previous updated name in project
+	Navigate To Project Page	PROJECT_URL
+	Select Issues
+	Select New Issue
+	Input Title					Issue_Name_Updated
+	Submit Issue Form
+	Select Issues
+	Verify that new Issue was created.
+
+Delete first issue in project
+	Navigate To Project Page	PROJECT_URL
+	Select Issues
+	Select Firstly created Issue
+	Select Edit Title and Description
+	Select Delete issue
+	Confirm Delete issue
+	Select Issues
+	Verify that first issue was deleted.
