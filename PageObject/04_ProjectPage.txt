@@ -7,8 +7,9 @@ Documentation	Project Test scenario. CRUD Operation: Create, Read, Update, Delet
 
 # TODO: Write Precondition and Postcondition 
 
-Pre Condition	 
-Post Condition	
+Pre Condition	Open Browser, Login to GitLab	 
+Post Condition	Logout from GitLab, Close Browser
+Tags	Project, TS-1-Project
 
 #******************* Common Variables ********************
 
@@ -19,7 +20,15 @@ Post Condition
 
 # TODO: write Project creation field variables
 
-
+PROJECT_NEW_URL= 	https://gitlab.com/projects/new
+PROJECTS_URL= 		https://gitlab.com/
+Project_Name= 		Testing
+Template_Option= 	Spring
+Template_Name= 		TestTemplate
+File_Name= 			README.md
+New_Information= 	Updating text
+Commit_Message= 	Update README.md
+Confirmation_Text= 	VefiVek/testtemplate
 
 #******************** Test Cases *************************
 
@@ -32,9 +41,50 @@ Post Condition
 	Update name of template project, 
 	Delete template project
 
+Create a new blank project
+	Navigate to Project Page	PROJECT_NEW_URL
+	Select Create Blank Project
+	Input Project Name			Project_Name
+	Submit Project Form
+	Verify page should contain Message Project was successfully created.
+
+Create a new template project
+	Navigate to Project Page	PROJECT_NEW_URL
+	Select Create from template
+	Select Use Template			Template_Option
+	Input Project Name			Template_Name
+	Submit Project Form
+	Verify page should contain Message Project was successfully created.
+
+Update existing template project
+	Navigate to Project Page	PROJECTS_URL
+	Select from projects		Template_Name
+	Select file					File_Name
+	Select Edit
+	Input Text field			New_Information
+	Input Commit Message		Commit_Message
+	Submit Commit Changes
+	Verify page should contain Message Your changes have been successfully committed.
+
+Delete existing template project
+	Navigate to Project Page	PROJECTS_URL
+	Select from projects		Template_Name
+	Select Settings
+	Expand Advanced
+	Select Delete project
+	Input confirmation			Confirmation_Text
+	Submit Delete Confirm
+	Verify page should contain Message Project is in process of being deleted.
+	Navigate to Project Page	PROJECTS_URL
+	Verify project is deleted in Projects list.
 
 # Negative Test
 # TODO:
 	Create a blank project with the previous same name
 
-
+Error Message should be visible after submitting project with existing project name
+	Navigate to Project Page	PROJECT_NEW_URL
+	Select Create blank project
+	Input Project Name			Project_Name
+	Sumbit new Project Form
+	Verify page should contain Error message Name has already been taken.
